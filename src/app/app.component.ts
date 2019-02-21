@@ -7,10 +7,12 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent       {
   title = 's3';
+
   favourites:Observable<Object>;
-  constructor(private afdb: AngularFireDatabase){
+
+  constructor      (private afdb: AngularFireDatabase){
       this.favourites = this.afdb.object('favourites').valueChanges();
   }
 }
